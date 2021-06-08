@@ -1,0 +1,17 @@
+<div class="row" *ngIf="post">
+    <div class="card mb-12 col-sm-8" *ngFor="let comment of comments">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="https://iicllhawaii.iafor.org/wp-content/uploads/sites/31/2017/02/IAFOR-Blank-Avatar-Image-1.jpg" style="max-width: 200px; max-height: 200px;"alt="avatar">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{comment.name}}</h5>
+              <p class="card-text">{{comment.email}}</p>
+              <p class="card-text">{{comment.body}}</p>
+              <p class="card-text"><small class="text-muted">Last updated 2 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
