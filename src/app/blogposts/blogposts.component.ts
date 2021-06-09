@@ -14,7 +14,7 @@ export class BlogpostsComponent implements OnInit {
 
   post!:number;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.getBlogPosts();
@@ -22,10 +22,10 @@ export class BlogpostsComponent implements OnInit {
 
   getBlogPosts(): void{
     // retrieves only first 12 posts instead of 100
-    this.dataService.getBlogPosts().subscribe(data => this.blogPosts = data.slice(0,12));
+    this.dataService.getBlogPosts().subscribe(data => {this.blogPosts = data.slice(0,12)});
   }
 
-  onSelect(post: number){
-    this.post = post;
+  onSelect(post: BlogPost){
+    this.post = post.id;
   }
 }

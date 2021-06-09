@@ -17,7 +17,7 @@ export class PostComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
 
-  ngOnChanges(changes){
+  ngOnChanges(changes: SimpleChanges){
     if(changes['post']){
       this.getComments();
     }

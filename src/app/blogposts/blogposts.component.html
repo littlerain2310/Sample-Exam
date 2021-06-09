@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row" *ngIf="!post">
-            <div class="card col-md-2" style="width: 18rem;" ="let post of blogPosts" (click)="onSelect(post.id)">
+            <div class="card col-md-2" style="width: 18rem;" *ngFor="let post of blogPosts" (click)="onSelect(post)">
                 <h5 class="card-header">{{post.id}}.{{post.title}}</h5>
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-muted">User ID: {{post.userId}}</h6>

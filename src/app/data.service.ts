@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BlogPost } from './blog-post';
 import { Comment } from './comment';
-
+import { map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +18,7 @@ export class DataService {
         post.id,
         post.title,
         post.body
-      ))))
+      ))));
   }
 
   getComments(): Observable<Comment[]> {
@@ -29,6 +29,6 @@ export class DataService {
         comment.name,
         comment.email,
         comment.body
-      ))))
+      ))));
   }
 }
